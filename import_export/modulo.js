@@ -1,6 +1,6 @@
-// export const nome = "joaquim"
-// export const soma = (a,b) => a + b;
-// export const PI = 3.14157
+export const nome = "joaquim"
+export const soma = (a,b) => a + b;
+export const PI = 3.14157
 export const saudar = 'joaquim'
 
 // exportar tudo no final do arquivo:
@@ -14,4 +14,6 @@ export { soma, subtrai };
 export function multiplicar(a,b){
     return a*b
 }
+
+
 
