@@ -9,3 +9,9 @@ const subtrai = (a, b) => a - b;
 
 export { soma, subtrai };
 
+// usando funcao
+
+export function multiplicar(a,b){
+    return a*b
+}
+
