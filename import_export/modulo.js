@@ -15,5 +15,15 @@ export function multiplicar(a,b){
     return a*b
 }
 
+export default (a, b) => a*b
 
+const mensage = () =>{
+    const nome= "DevJocas"
+    const idade=67
+    const profisao = "Programador"
+    const estudar = "JavaScript"
+    return `Eu sou o ${nome} estou estudando o  ${estudar}`
+
+}
+export default mensage;
 
