@@ -29,6 +29,25 @@ async function resultadoSoma(){
 }
 resultadoSoma()
 
+// usando o .then  
+import('./mathUtils.js')
+  .then(modulo => {
+    // Para export nomeado, a função está em modulo.soma
+    const resultado = modulo.soma(5, 3);
+    console.log(resultado); // 8
+  })
+  .catch(erro => {
+    console.error('Erro ao carregar módulo:', erro);
+  });
+
+
+
 // Usando o top-level-await
 const { soma } = await  import('./mathUtils.js')
 console.log(soma(3, 5))
+
+// Alternativa com .then
+import('./mathUtils.js').then(modulo => {
+  const multiplica = modulo.default;
+  console.log(multiplica(2, 6)); // 12
+});
