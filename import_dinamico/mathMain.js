@@ -1,4 +1,5 @@
 async function carregarModulo() {
+    // usando o top-level-await
     const  modulo = await import('./mathUtils.js')
     // A função default deve ficar em res.modulo
     const multiplicar = modulo.default
@@ -28,3 +29,6 @@ async function resultadoSoma(){
 }
 resultadoSoma()
 
+// Usando o top-level-await
+const { soma } = await  import('./mathUtils.js')
+console.log(soma(3, 5))
