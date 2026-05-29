@@ -29,8 +29,15 @@ const produtos = [
 ];
 
 const disponivel = produtos.find(p => p.estoque > 0);
+// pegando nome e produto usando desestruturação
+const nomesProdutoDisponivel = produtos.map(({ nome })=>({ nome }))
+// pegando os produtos
+// const nomesProdutoDisponivel = produtos.map(p=> p.nome)
+// outra forma
+const nomesProdutoDisponivel = produtos.map(nome=p =>p.nome)
 
 console.log(disponivel);
+console.log("Produtos disponivel na loja: ", nomesProdutoDisponivel)
 
 // findIndex() para obter o índice
 const usuarios = [
@@ -39,20 +46,23 @@ const usuarios = [
   { id: 3, nome: "Carla" },
 ];
 
-const indice = usuarios.findIndex(u => u.nome === "Bruno");
+const indice = usuarios.findIndex(u => u.nome === "Ana");
+const valorIndice = usuarios.findIndex((index) =>{
+  return index
+})
+console.log(valorIndice)
+
 console.log(indice);  
 
 // usando funcao
 let cachorrosEncontrados = [{
     breed: "Beagle",
     color: "branco"
-  },
-
+  }, 
   {
     raca: "Chihuahua",
     color: "amarelo"
   },
-
   {
     breed: "Pug",
     color: "preto"
@@ -63,10 +73,29 @@ function encontraMeuCachorro(cachorro) {
   return cachorro.raca === "Chihuahua"
 }
 
-let meuCachorro = cachorrosEncontrados.find(cachorro=> encontraMeuCachorro(cachorro));
+let meuCachorro = cachorrosEncontrados.find(c=> encontraMeuCachorro(c));
 
 console.log(meuCachorro);
 
+// 1-criar um array de objectos , com prop(nomeAutor, livro)
+const autorLivros =[
+  {nomeAutor:'Joaquim', livro:'JavaScript Basico'},
+  {nomeAutor:'DevJocas', livro:'Lear Python'},
+  {nomeAutor:'Alberto', livro:'VsCode Pro'},
+  {nomeAutor:'Ana Rosa', livro:'MySQL Lite'}
+]
+// 2- criar uma funcao que contem parametro dado e e verifica e retorna o valor do dado
+function encontrarAutor(dado){
+  if(dado.livro === 'Lear Python'){
+    return dado
+  }
+}
+// 3- criar umavariavel que vai armazenar os valor e encontrar
+const autorAchado = autorLivros.find(autor =>encontrarAutor(autor))
+const buscaIndex =  autorLivros.findIndex(u=>u.nomeAutor === 'DevJocas')
+
+console.log("Nome do Autor do Livro: ",autorAchado.nomeAutor)
+console.log("Posicção do indice: ",buscaIndex)
 // Exemplos usando parametros padrao 
 let posicionesReservadas = [{
     nombre: "Ana",
